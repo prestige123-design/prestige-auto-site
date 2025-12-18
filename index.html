@@ -21,8 +21,17 @@ a{text-decoration:none;color:inherit}
 
 /* HEADER */
 header{border-bottom:1px solid #e5e7eb;background:#fff}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-nav a{margin-left:28px;font-weight:600;color:#374151}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 0;
+}
+nav a{
+  margin-left:28px;
+  font-weight:600;
+  color:#374151;
+}
 
 /* HERO */
 .hero{
@@ -36,11 +45,32 @@ nav a{margin-left:28px;font-weight:600;color:#374151}
   align-items:center;
 }
 .hero-text{max-width:620px}
-.hero h1{font-size:42px;line-height:1.2;margin-bottom:16px;font-weight:800}
-.hero p{font-size:18px;margin-bottom:28px;color:#e5e7eb}
+.hero h1{
+  font-size:42px;
+  line-height:1.2;
+  margin-bottom:16px;
+  font-weight:800;
+}
+.hero p{
+  font-size:18px;
+  margin-bottom:28px;
+  color:#e5e7eb;
+}
 .hero-buttons{display:flex;gap:16px}
-.btn-primary{background:#c62828;color:#fff;padding:14px 22px;border-radius:6px;font-weight:700}
-.btn-secondary{background:#fff;color:#111827;padding:14px 22px;border-radius:6px;font-weight:700}
+.btn-primary{
+  background:#c62828;
+  color:#fff;
+  padding:14px 22px;
+  border-radius:6px;
+  font-weight:700;
+}
+.btn-secondary{
+  background:#fff;
+  color:#111827;
+  padding:14px 22px;
+  border-radius:6px;
+  font-weight:700;
+}
 
 /* SECTIONS */
 section{padding:70px 0}
@@ -58,7 +88,11 @@ h2{font-size:28px;margin-bottom:30px}
   overflow:hidden;
   background:#fff;
 }
-.car-card img{width:100%;height:180px;object-fit:cover}
+.car-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
 .car-body{padding:16px}
 .car-title{font-weight:700;margin-bottom:6px}
 .car-price{font-weight:800;margin-bottom:12px}
@@ -127,7 +161,19 @@ h2{font-size:28px;margin-bottom:30px}
 
 <header>
   <div class="container header-inner">
-    <strong>PRESTIGE AUTO</strong>
+
+    <!-- LOGO (matches mockup) -->
+    <svg width="210" height="44" viewBox="0 0 210 44" xmlns="http://www.w3.org/2000/svg" aria-label="Prestige Auto">
+      <!-- car silhouette -->
+      <path d="M10 26c6-10 18-15 42-15h64c22 0 34 6 40 15" fill="none" stroke="#111827" stroke-width="2.5"/>
+      <!-- red accent -->
+      <path d="M52 11h34" stroke="#c62828" stroke-width="3"/>
+      <!-- text -->
+      <text x="10" y="40" font-size="18" font-weight="800" fill="#111827" letter-spacing=".5">
+        PRESTIGE AUTO
+      </text>
+    </svg>
+
     <nav>
       <a href="#">Home</a>
       <a href="#inventory">Inventory</a>
@@ -141,8 +187,10 @@ h2{font-size:28px;margin-bottom:30px}
   <div class="container">
     <div class="hero-text">
       <h1>Your Trusted Used Car Dealer<br>in Beit Shemesh & Jerusalem</h1>
-      <p>We buy, sell and repair all makes and models.<br>
-         Same day, professional service you can count on!</p>
+      <p>
+        We buy, sell and repair all makes and models.<br>
+        Same day, professional service you can count on!
+      </p>
       <div class="hero-buttons">
         <a href="#inventory" class="btn-primary">View Inventory</a>
         <a href="https://wa.me/972000000000" class="btn-secondary">Contact via Whatsapp</a>
