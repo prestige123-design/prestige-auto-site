@@ -1,54 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prestige Auto | Used Cars Beit Shemesh & Jerusalem</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prestige Auto | Used Cars Beit Shemesh & Jerusalem</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --primary:#b71c1c;
-      --dark:#0f172a;
-      --muted:#64748b;
-      --bg:#f8fafc;
-      --card:#ffffff;
-      --radius:16px;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui;background:var(--bg);color:var(--dark)}
-    a{text-decoration:none;color:inherit}
+<style>
+:root{
+  --primary:#b71c1c;
+  --dark:#0f172a;
+  --muted:#64748b;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --radius:16px;
+}
 
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:10}
-    .nav{max-width:1200px;margin:auto;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
-    nav a{margin-left:18px;font-weight:600;color:#334155}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:var(--bg);
+  color:var(--dark);
+}
+a{text-decoration:none;color:inherit}
 
-    .hero{
-      background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-      url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c5?q=80&w=1600') center/cover no-repeat;
-      color:#fff
-    }
-    .hero-inner{max-width:1200px;margin:auto;padding:90px 18px}
-    .hero h1{font-size:clamp(32px,5vw,48px);margin:0 0 12px;font-weight:800}
-    .hero p{font-size:clamp(16px,3vw,20px);max-width:520px;margin-bottom:26px}
-    .cta{background:var(--primary);color:#fff;padding:14px 22px;border-radius:12px;font-weight:700}
+header{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:1px solid #e5e7eb;
+}
+.nav{
+  max-width:1200px;margin:auto;padding:14px 18px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+nav a{margin-left:18px;font-weight:600;color:#334155}
 
-    section{max-width:1200px;margin:60px auto;padding:0 18px}
-    h2{font-size:28px;margin-bottom:18px}
+.hero{
+  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+  url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c5?q=80&w=1600') center/cover no-repeat;
+  color:#fff;
+}
+.hero-inner{
+  max-width:1200px;margin:auto;padding:90px 18px;
+}
+.hero h1{font-size:clamp(32px,5vw,48px);margin-bottom:12px;font-weight:800}
+.hero p{font-size:18px;max-width:520px;margin-bottom:26px}
+.cta{background:var(--primary);color:#fff;padding:14px 22px;border-radius:12px;font-weight:700}
 
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-    .card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.08)}
-    .carousel img{width:100%;height:210px;object-fit:cover}
-    .card-body{padding:16px}
-    .title{font-weight:800}
-    .price{font-size:20px;font-weight:800;margin-top:6px}
-    .wa{margin-top:10px;display:block;text-align:center;background:#25D366;color:#fff;padding:12px;border-radius:10px;font-weight:700}
+section{max-width:1200px;margin:60px auto;padding:0 18px}
+h2{font-size:28px;margin-bottom:18px}
 
-    .about{background:#fff;border-radius:16px;padding:28px;box-shadow:0 10px 28px rgba(0,0,0,.08)}
-  </style>
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+.card{
+  background:#fff;border-radius:16px;
+  overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.08);
+}
+
+.carousel{position:relative}
+.carousel img{width:100%;height:210px;object-fit:cover;display:none;cursor:pointer}
+.carousel img.active{display:block}
+
+.nav-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:36px;height:36px;border-radius:50%;
+  border:none;background:rgba(0,0,0,.55);
+  color:#fff;font-size:22px;cursor:pointer;
+}
+.prev{left:10px}.next{right:10px}
+
+.thumbs{
+  display:flex;gap:8px;padding:8px;overflow-x:auto;
+}
+.thumbs img{
+  width:60px;height:44px;object-fit:cover;
+  border-radius:8px;opacity:.6;cursor:pointer;
+}
+.thumbs img.active{opacity:1;outline:2px solid var(--primary)}
+
+.card-body{padding:16px}
+.title{font-weight:800}
+.meta{font-size:14px;color:var(--muted);margin:6px 0}
+.price{font-size:20px;font-weight:800}
+
+.wa{
+  margin-top:10px;display:block;text-align:center;
+  background:#25D366;color:#fff;
+  padding:12px;border-radius:10px;font-weight:700;
+}
+
+.about{
+  background:#fff;border-radius:16px;
+  padding:28px;box-shadow:0 10px 28px rgba(0,0,0,.08);
+}
+
+.lightbox{
+  position:fixed;inset:0;background:rgba(0,0,0,.9);
+  display:none;align-items:center;justify-content:center;z-index:999;
+}
+.lightbox img{max-width:94%;max-height:94%}
+.lightbox.active{display:flex}
+.close{
+  position:absolute;top:20px;right:24px;
+  font-size:30px;color:#fff;cursor:pointer;
+}
+
+.whatsapp-float{
+  position:fixed;bottom:20px;right:20px;
+  background:#25D366;color:#fff;
+  width:60px;height:60px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;box-shadow:0 6px 18px rgba(0,0,0,.25);
+  z-index:1000;
+}
+</style>
 </head>
 
 <body>
@@ -73,43 +145,83 @@
 
 <section id="inventory">
   <h2>Available Vehicles</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1617814072417-2b0a8b68b1a3">
-      <div class="card-body">
-        <div class="title">2020 Toyota Corolla</div>
-        <div class="price">₪72,000</div>
-        <a class="wa" href="https://wa.me/972000000000">WhatsApp</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1601924579730-4c5e6f65f33d">
-      <div class="card-body">
-        <div class="title">2019 Mazda 3</div>
-        <div class="price">₪65,000</div>
-        <a class="wa" href="https://wa.me/972000000000">WhatsApp</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442">
-      <div class="card-body">
-        <div class="title">2021 Hyundai Elantra</div>
-        <div class="price">₪78,000</div>
-        <a class="wa" href="https://wa.me/972000000000">WhatsApp</a>
-      </div>
-    </div>
-  </div>
+  <div class="grid" id="cars"></div>
 </section>
 
 <section id="about">
   <h2>About Us</h2>
   <div class="about">
     <p><strong>Prestige Auto</strong> proudly serves Beit Shemesh, Jerusalem, and surrounding areas.
-       We buy, sell, and repair all makes and models, offering honest pricing and professional same-day service you can trust.</p>
+       We buy, sell, and repair all makes and models with honest pricing and professional service.</p>
   </div>
 </section>
+
+<div class="lightbox" id="lightbox">
+  <span class="close" onclick="closeLightbox()">×</span>
+  <img id="lightboxImg">
+</div>
+
+<a class="whatsapp-float" href="https://wa.me/972000000000">💬</a>
+
+<script>
+/* 🔥 DEMO INVENTORY (Firebase-ready) */
+const cars=[
+{year:2020,make:"Toyota",model:"Corolla",price:"₪72,000",desc:"Low mileage, excellent condition",
+images:["https://images.unsplash.com/photo-1617814072417-2b0a8b68b1a3","https://images.unsplash.com/photo-1549924231-f129b911e442"]},
+{year:2019,make:"Mazda",model:"3",price:"₪65,000",desc:"Reliable and economical",
+images:["https://images.unsplash.com/photo-1601924579730-4c5e6f65f33d","https://images.unsplash.com/photo-1597007038011-7e44b36e8c3c"]},
+{year:2021,make:"Hyundai",model:"Elantra",price:"₪78,000",desc:"Modern interior",
+images:["https://images.unsplash.com/photo-1617531653332-bd46c24f2068","https://images.unsplash.com/photo-1609520505218-7421df66b8b4"]}
+];
+
+const grid=document.getElementById("cars");
+
+cars.forEach(car=>{
+  const card=document.createElement("div");
+  card.className="card";
+  let idx=0;
+
+  card.innerHTML=`
+    <div class="carousel">
+      ${car.images.map((i,n)=>`<img src="${i}" class="${n===0?'active':''}">`).join("")}
+      <button class="nav-btn prev">‹</button>
+      <button class="nav-btn next">›</button>
+    </div>
+    <div class="thumbs">
+      ${car.images.map((i,n)=>`<img src="${i}" class="${n===0?'active':''}">`).join("")}
+    </div>
+    <div class="card-body">
+      <div class="title">${car.year} ${car.make} ${car.model}</div>
+      <div class="meta">${car.desc}</div>
+      <div class="price">${car.price}</div>
+      <a class="wa" href="https://wa.me/972000000000">WhatsApp</a>
+    </div>`;
+
+  const imgs=[...card.querySelectorAll(".carousel img")];
+  const thumbs=[...card.querySelectorAll(".thumbs img")];
+
+  function show(i){
+    imgs.forEach((im,n)=>im.classList.toggle("active",n===i));
+    thumbs.forEach((t,n)=>t.classList.toggle("active",n===i));
+    idx=i;
+  }
+
+  card.querySelector(".prev").onclick=()=>show((idx-1+imgs.length)%imgs.length);
+  card.querySelector(".next").onclick=()=>show((idx+1)%imgs.length);
+  thumbs.forEach((t,n)=>t.onclick=()=>show(n));
+  imgs.forEach(im=>im.onclick=()=>openLightbox(im.src));
+
+  grid.appendChild(card);
+});
+
+function openLightbox(src){
+  document.getElementById("lightboxImg").src=src;
+  document.getElementById("lightbox").classList.add("active");
+}
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove("active");
+}
+</script>
 
 </body>
 </html>
